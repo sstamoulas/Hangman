@@ -28,9 +28,9 @@ class HangpersonGame
   def guess(letter)
     letter = letter.to_s.downcase
     if letter.empty?
-      raise ArgumentError 
+      raise ArgumentError, "Invalid guess."
     elsif  !(letter =~ /[[:alpha:]]/)
-      raise ArgumentError
+      raise ArgumentError, "Invalid guess."
     end
     unless @guesses.count(letter) > 0 || @wrong_guesses.count(letter) > 0
       unless @word.count(letter) > 0
